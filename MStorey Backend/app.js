@@ -8,6 +8,7 @@ connectDB();
 const authRoute = require("./routes/authRoute")
 const userRoute = require("./routes/userRoute")
 const productRoute = require("./routes/productRoute")
+const cartRoute = require("./routes/cartRoute")
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -15,6 +16,7 @@ app.use(express.urlencoded({extended: true}));
 app.use("/api/auth", authRoute )
 app.use("/api", userRoute)
 app.use("/api", productRoute)
+app.use("/api/cart", cartRoute)
 
 app.get("/",(req,res)=>{
     res.send("MStory");
