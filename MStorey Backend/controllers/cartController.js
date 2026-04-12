@@ -1,7 +1,6 @@
-const { default: mongoose } = require("mongoose");
 const Cart = require("../models/cartModel");
 const Product = require("../models/productModel");
-const cartModel = require("../models/cartModel");
+
 
 const addToCart = async (req, res) => {
   try {
