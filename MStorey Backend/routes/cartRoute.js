@@ -5,7 +5,7 @@ const verifyRole = require("../middlewares/roleMiddleware");
 const {
   addToCart,
   removeFromCart,
-  updateCart,
+  updateQuantity,
   getCart,
   clearCart,
 } = require("../controllers/cartController");
@@ -14,7 +14,7 @@ router.post("/addToCart", verifyToken, verifyRole("user", "admin"), addToCart);
 
 router.delete("/removeFromCart",verifyToken, verifyRole("user", "admin"), removeFromCart);
 
-router.put("/updateCart",verifyToken, verifyRole("user", "admin"),updateCart);
+router.put("/updateQuantity",verifyToken, verifyRole("user", "admin"),updateQuantity);
 
 router.get('/getCart',verifyToken, verifyRole("user", "admin"),getCart);
 
