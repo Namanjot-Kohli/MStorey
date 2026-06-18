@@ -14,7 +14,7 @@ const {
 
 router.post("/placeOrder",verifyToken, verifyRole('user'), placeOrder)
 
-router.get("/getMyOrder",verifyToken, verifyRole('user'),getMyOrders)
+router.get("/getMyOrders",verifyToken, verifyRole('user'),getMyOrders)
 
 router.get('/getSingleOrder/:id', verifyToken, verifyRole('user','admin'),getSingleOrder)
 

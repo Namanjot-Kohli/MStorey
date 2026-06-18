@@ -14,11 +14,19 @@ const checkoutSchema = mongoose.Schema(
           ref: "Product",
           required: true,
         },
+        // we are populating when getting orders so no need to specifically save name
+        // if SELLER CHANGES NAME, CHECKOUT ALSO HAS NAME CHANGED
+        // name: {
+        //   type: String,
+        //   required: true,
+        // },
         quantity: {
           type: Number,
           required: true,
           min: 1,
         },
+        //EVEN IF SELLER CHANGED PRICE IT WOULD NOT AFFECT US AS WE STORE THE ORIGINAL PRICE TOO IN CHECKOUT UNLIKE NAME 
+        // PRICE PRESERVEED
         price: {
           type: Number,
           required: true,
