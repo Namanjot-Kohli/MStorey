@@ -1,9 +1,10 @@
 import React from 'react'
+import Home from './pages/Home'
 
 const App = () => {
   return (
     <div>
-      <h1>MStorey</h1>
+      <Home />
     </div>
   )
 }
