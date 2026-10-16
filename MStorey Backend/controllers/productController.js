@@ -36,11 +36,32 @@ const createProduct = async (req,res) =>{
 
 const getAllProducts = async (req,res) => {
     try{
+        const name = req.query.search?.trim() || ""
+        const category = req.query.category
+        //?.trim().toLowerCase() || ""
         const products = await Product.find()
-        res.status(200).json({
-            count: products.length,
-            products
-        })
+        
+        
+        if(!name){
+            if(!category){
+                return res.status(200).json(products)
+            }else{
+                const foundProduct = await Product.find({ category });
+                if(!foundProduct){
+                    return res.status(404).json({msg: `No product with category:${category} found`})
+                }
+                return res.status(200).json(foundProduct)
+            }
+        }else{
+            const foundProduct = await Product.find({
+                name: {$regex: name, $options: "i"}
+            });
+            if(!foundProduct){
+                return res.status(404).json({msg: `No product with ${name} found`})
+            }
+            return res.status(200).json(foundProduct)
+        }
+        
     }catch(err){
         res.status(500).json({msg: err.message})
     }
@@ -58,6 +79,32 @@ const getProductById = async (req,res) =>{
         res.status(500).json({msg: err.message})
     }
 }
+
+// const getProductByName = async() =>{
+//     try{
+//     }catch(err){
+//         res.status(500).json({msg: err.message})
+//     }
+// }
+
+// const getProductByCategory = async() =>{
+//     try{
+//         const scategory = req.query.categories?.trim().toLowerCase() || ""
+//     }catch(err){
+//         res.status(500).json({msg: err.message})
+//     }
+// }
+
+// const getProductByNC = async() =>{
+//     try{
+        
+//         if(!search){
+//             if(!category)
+//         }
+//     }catch(err){
+//         return res.status(500).json({"msg": err.message})
+//     }
+// }  
 
 const updateProduct = async (req,res) =>{
     try{

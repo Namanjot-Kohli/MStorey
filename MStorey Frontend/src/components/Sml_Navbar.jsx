@@ -43,55 +43,55 @@ const Sml_Navbar = () => {
         className={`bg-teal-50 w-full h-12 md:h-15 flex justify-start md:justify-evenly px-4 md:px-20 mt-1 overflow-x-auto [&>div]:shrink-0 gap-4 md:gap-0 hide-scrollbar select-none ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`} 
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
     >
-        <Link to='/products/All' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer relative z-50 h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
+        <Link to='/products' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer relative z-50 h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
             <FontAwesomeIcon className='text-xl md:text-3xl' icon={faBagShopping} />
             <div className='text-xs md:text-sm font-medium'>All</div>
         </Link>
-        <Link to='/products/Fashion' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer relative z-50 h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
+        <Link to='/products?category=Fashion' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer relative z-50 h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
             <FontAwesomeIcon className='text-xl md:text-3xl' icon={faHatCowboy} />
             <div className='text-xs md:text-sm font-medium'>Fashion</div>
         </Link>
-        <Link to='/products/Sports' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
+        <Link to='/products?category=Sports' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
             <FontAwesomeIcon className='text-xl md:text-3xl' icon={faVolleyball} />
             <div className='text-xs md:text-sm font-medium'>Sports</div>
         </Link>
-        <Link to='/products/Mobiles' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
+        <Link to='/products?category=Mobiles' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
             <FontAwesomeIcon className='text-xl md:text-3xl' icon={faMobileScreen} />
             <div className='text-xs md:text-sm font-medium'>Mobiles</div>
         </Link>
-        <Link to='/products/Electronics' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
+        <Link to='/products?category=Electronics' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
             <FontAwesomeIcon className='text-xl md:text-3xl' icon={faTv} />
             <div className='text-xs md:text-sm font-medium'>Electronics</div>
         </Link>
-        <Link to='/products/Kids' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
+        <Link to='/products?category=Kids' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
             <FontAwesomeIcon className='text-xl md:text-3xl' icon={faSnowman} />
             <div className='text-xs md:text-sm font-medium'>Kids</div>
         </Link>
-        <Link to='/products/Furniture' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
+        <Link to='/products?category=Furniture' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
             <FontAwesomeIcon className='text-xl md:text-3xl' icon={faCouch} />
             <div className='text-xs md:text-sm font-medium'>Furniture</div>
         </Link>
-        <Link to='/products/Gaming' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
+        <Link to='/products?category=Gaming' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
             <FontAwesomeIcon className='text-xl md:text-3xl' icon={faHeadset} />
             <div className='text-xs md:text-sm font-medium'>Gaming</div>
         </Link>
-        <Link to='/products/Groceries' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
+        <Link to='/products?category=Groceries' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
             <FontAwesomeIcon className='text-xl md:text-3xl' icon={faCarrot} />
             <div className='text-xs md:text-sm font-medium'>Groceries</div>
         </Link>
-        <Link to='/products/Pets' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
+        <Link to='/products?category=Pets' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
             <FontAwesomeIcon className='text-xl md:text-3xl' icon={faCat} />
             <div className='text-xs md:text-sm font-medium'>Pets</div>
         </Link>
-        <Link to='/products/Stationery' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
+        <Link to='/products?category=Stationery' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
             <FontAwesomeIcon className='text-xl md:text-3xl' icon={faBook} />
             <div className='text-xs md:text-sm font-medium'>Stationery</div>
         </Link>
-        <Link to='/products/Skincare' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
+        <Link to='/products?category=Skincare' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
             <FontAwesomeIcon className='text-xl md:text-3xl' icon={faPumpSoap} />
             <div className='text-xs md:text-sm font-medium'>Skincare</div>
         </Link>
-        <Link to='/products/Kitchen' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
+        <Link to='/products?category=Kitchen' className='hover:bg-teal-300 rounded-br-xl rounded-tl-xl cursor-pointer h-full w-14 md:w-18 flex flex-col items-center justify-center p-1'>
             <FontAwesomeIcon className='text-xl md:text-3xl' icon={faUtensils} />
             <div className='text-xs md:text-sm font-medium'>Kitchen</div>
         </Link>

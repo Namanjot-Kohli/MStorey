@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
+import {useNavigate} from 'react-router-dom'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faLocationDot , faCartShopping, faMagnifyingGlass, faCircleChevronDown, faBars, faXmark, faCircleUser, faBoxOpen, faClipboardQuestion, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 import Hamburger from 'hamburger-react'
@@ -6,14 +7,30 @@ import { Link } from 'react-router-dom'
 // import { Spin as Hamburger } from 'hamburger-react'
 const Navbar = () => {
   const [Profile, setProfile] = useState(false)
+  const [search, setSearch] = useState("")
+  const navigate = useNavigate()
+  console.log(search)
+  const handleSearch = () =>{
+    navigate(`/products?search=${encodeURIComponent(search)}`)
+  } 
   return (
     <div className='z-50 w-full h-16 bg-teal-800 flex justify-between items-center fixed top-0 left-0 gap-2 sm:gap-4 lg:gap-6'>
         <Link to='/' className='h-20 p-1 md:p-3 w-32 md:w-40 lg:w-[15%] flex justify-center items-center flex-shrink-0'>
             <img src='/MLOGO.png' className='w-full h-auto'></img>
         </Link>
         <div className='text-white/80 h-full flex-grow flex justify-center items-center px-2 md:px-0'>
-            <input placeholder='Search Here...' className='px-2 md:px-4 py-1.5 md:py-2 text-sm md:text-xl rounded-l-md border border-black border-[2px] w-full h-[55%] md:h-[70%] text-black outline-none'></input>
-            <button className='text-base md:text-xl cursor-pointer border rounded-r-md border-black border-[2px] border-l-0 px-3 md:px-4 h-[55%] md:h-[70%] bg-teal-700 hover:bg-teal-600 flex justify-center items-center'>
+            <input 
+            value={search}
+            onChange={(e)=>setSearch(e.target.value)}
+            // onChange={(e)=>setSearch(e.target.value?.trim().toLowerCase() || "")}
+            placeholder='Search Here...' 
+            className='px-2 md:px-4 py-1.5 md:py-2 text-sm md:text-xl rounded-l-md border border-black border-[2px] w-full h-[55%] md:h-[70%] text-black outline-none'>
+            </input>
+            <button 
+            className='text-base md:text-xl cursor-pointer border rounded-r-md border-black border-[2px] border-l-0 px-3 md:px-4 h-[55%] md:h-[70%] bg-teal-700 hover:bg-teal-600 flex justify-center items-center'
+            onClick={handleSearch}
+            >
+
                 <div>
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </div>

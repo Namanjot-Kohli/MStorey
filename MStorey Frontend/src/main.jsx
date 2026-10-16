@@ -17,7 +17,7 @@ import { MantineProvider } from '@mantine/core';
 
 const router = createBrowserRouter([
   {path:"/", element: <Home /> },
-  {path:"/products/:categories", element: <Products />},
+  {path:"/products", element: <Products />},
   {path:"/jackass", element: <Dummy_ProductCard />}
 ])
 

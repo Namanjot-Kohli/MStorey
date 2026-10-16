@@ -8,7 +8,7 @@ router.post("/createProduct",verifyUser,verifyRole("seller", "admin"),createProd
 
 router.get("/allProducts", getAllProducts)
 
-router.get("/product/:id", getProductById)
+router.get("/search/:id", getProductById)
 
 router.put("/updateProduct/:id",verifyUser,verifyRole("admin","seller"), updateProduct)
 

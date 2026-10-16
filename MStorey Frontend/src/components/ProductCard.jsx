@@ -1,24 +1,30 @@
 import React, { useState, useEffect } from "react";
 import api from "../services/api"
-import { useParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCreditCard, faTruckMoving } from "@fortawesome/free-solid-svg-icons";
 
 const ProductCard = () => {
   const [products, setProducts] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const search = searchParams.get("search")
+  const category = searchParams.get("category");
+
   useEffect(() => {
-          const fetchedProduct = async () => {
-            const response = await api.get("/allProducts");
-            setProducts(response.data.products);
-            console.log(response.data)
-          };
-          fetchedProduct();
-  }, [])
-  const { categories } = useParams();
-  const showProducts =
-    categories === "All"
-      ? products
-      : products.filter((val) => categories === val.category);
+    const fetchedProduct = async () => {
+      const response = await api.get("/allProducts", {
+        params:{
+          search,
+          category
+        }
+      });
+      setProducts(response.data)
+      console.log(response.data)
+    };
+    fetchedProduct();
+    
+  }, [search, category])
 
   const [isOpen, setIsOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -64,7 +70,7 @@ const ProductCard = () => {
         </div>
       ) : null}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center px-4 md:px-8 gap-4">
-        {showProducts.map((val) => (
+        {products.map((val) => (
           <div
             onClick={() => {
               setSelectedProduct(val);
